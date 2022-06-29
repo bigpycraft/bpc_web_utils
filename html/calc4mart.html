@@ -1,0 +1,135 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<style type="text/css">
+table,tr,td{border-collapse:collapse; border:1px solid #d7d7d7;font-size:10pt;line-height:17pt;}
+body{overflow:hidden;}
+</style>
+
+<title>마트 계산기</title>
+<script language="JavaScript">
+	function calc()
+	{
+		var priceA = document.getElementById('priceA').value;
+		var priceB = document.getElementById('priceB').value;
+		var qtyA = document.getElementById('qtyA').value;
+		var qtyB = document.getElementById('qtyB').value;
+		var txtA = "&nbsp;";
+		var txtB = "&nbsp;";
+		var times;
+		if(isNaN(priceA) || isNaN(priceB) || isNaN(qtyA) || isNaN(qtyB))
+		{
+			document.getElementById('compA').innerHTML = "숫자만 입력하세요";
+			document.getElementById('compB').innerHTML = "숫자만 입력하세요";
+			return;
+		}
+		if(priceA<0 || priceB<0 || qtyA<0 || qtyB<0)
+		{
+			document.getElementById('compA').innerHTML = "양수만 입력하세요";
+			document.getElementById('compB').innerHTML = "양수만 입력하세요";
+			return;
+		}
+
+		if((priceA / qtyA) > (priceB / qtyB))
+		{
+			times = Math.round((priceA / qtyA) / (priceB / qtyB)*100)/100;
+			txtA = "<font color=red><b>"+times+" 배 비쌈</b></font>";
+			txtB = "<font color=blue><b>저렴</b></font>";
+		}
+		else if((priceA / qtyA) < (priceB / qtyB))
+		{
+			times = Math.round((priceB / qtyB) / (priceA / qtyA)*100)/100;
+			txtA = "<font color=blue><b>저렴</b></font>";
+			txtB = "<font color=red><b>"+times+" 배 비쌈</b></font>";
+		}
+		else
+		{
+			txtA = "<b>똑같음</b>";
+			txtB = "<b>똑같음</b>";
+		}
+		document.getElementById('compA').innerHTML = txtA;
+		document.getElementById('compB').innerHTML = txtB;
+	}
+	
+</script>
+</head>
+<body>
+	<p align=center>마트 계산기</p>
+	<table border=1 width=100%>
+		<tr>
+			<td width=50% align=center height="30">큰용량물건</td>
+			<td width=50% align=center height="30">작은용량물건</td>
+		</tr>
+		<tr>
+			<td align=center>
+				가격:<input type=tel size=10 id=priceA>
+			</td>
+			<td align=center>
+				가격:<input type=tel size=10 id=priceB>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align=center>
+				용량:<input type=tel size=10 id=qtyA>
+			</td>
+			<td align=center>
+				용량:<input type=tel size=10 id=qtyB>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align=center height=30>
+				<div id=compA>&nbsp;</div>
+			</td>
+			<td align=center height=30>
+				<div id=compB>&nbsp;</div>
+			</td>
+		</tr>
+		
+		
+	</table>
+	<p align=center>
+	<input type="button" value="계산하기" style="width:100%;height:40px;" onclick="calc()">
+	</p>
+	
+	<ol type=1>
+		<li>대형마트에서 용량대비 가격을 빠르게 알아보기 위해서 만든 페이지입니다.
+		<li>동일제품 중, 큰 물건의 가격과 용량을 앞쪽 폼에 입력하고 작은물건의 가격과 용량을 뒤쪽 폼에 입력합니다.
+		<li>숫자만 입력해야 하며, 문자를 입력하면 계산되지 않습니다.
+		<li>계산하기 버튼을 누르면 어느쪽이 저렴한지 표시됩니다.
+	</ol>
+	<br><br>
+﻿<p align=center>
+
+<table><tr><td>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<img src="./images/bpc_logo.png" alt="Advertisement" border="0" width="400" height="140" style="display:block">
+<!--
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-7130538755139897"
+     data-ad-slot="2384272919"></ins>
+-->
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</td></tr></table></p>﻿﻿<!--1-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24965715-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!--2--></body>
+</html>
